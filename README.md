@@ -1,5 +1,7 @@
 # Terms
 
+[![Build Status](https://travis-ci.org/mynextvote/terms.svg?branch=master)](https://travis-ci.org/mynextvote/terms)
+
 Terms helps with finding term lengths for elected officials in different
 US states.
 
