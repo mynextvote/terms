@@ -1,0 +1,37 @@
+{
+  "name": "mnv-terms",
+  "description": "Easily find state legislature and governor term lengths",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "homepage": "https://github.com/mynextvote/terms",
+  "bugs": "https://github.com/mynextvote/terms/issues",
+  "repository": {
+    "url": "https://github.com/mynextvote/terms",
+    "type": "git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-es2015": "^6.22.0",
+    "jest": "^18.1.0",
+    "standard": "^8.6.0"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production mkdir -p dist && babel src --out-dir dist",
+    "test": "standard && jest",
+    "test:watch": "jest --watch"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "it",
+      "expect"
+    ]
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/dist/"
+    ]
+  },
+  "dependencies": {}
+}
