@@ -1,5 +1,5 @@
 export function getTerms (state) {
-  if(!state) {
+  if (!state) {
     throw new Error('Please specify a state code like "CA"')
   }
   switch (state) {
