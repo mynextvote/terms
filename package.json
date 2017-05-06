@@ -32,6 +32,10 @@
   "jest": {
     "testPathIgnorePatterns": [
       "<rootDir>/dist/"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov"
     ]
   },
   "dependencies": {}
