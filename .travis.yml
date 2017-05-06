@@ -8,3 +8,12 @@ cache:
     - node_modules
 script:
   - yarn run test
+
+addons:
+  code_climate:
+    repo_token:
+      secure: "fbZ9R0JOUrXTajkXS5OxevZJVy5eJHLt3de84xLJ712r2ZTDVKcwhiwkE9k2z4iBVqB5IRLznzVx/2beax1sbkPJ6hv/GOirThUDBuUSvxfnOiz3ycR8o80jy4LQN5a3geP2ZZewHNsFKdlqfj7/3BwZ15GmIZ4gTylCHdkX585NPv1LY6JLz9Z5Am7U9IwajdNEQAJX+iWphnr5I/s94f4EFtkwoACwzajxpLy1UwgHP3fx/9MPk25xnSsiV/ZbtSrDsaLWkWyuNrysOjdadaw9ks2/bPdrurh5vBM75FSD3aCrkRSVJo0dM7mF9FKyn8IAkcJMVD4MDEUWUGjNGvLD99KFJBtNAyNWuzbPggoVwwCq0RWHarfbPFfxN4KbitdcOQr/BR2OiC9lKCgy1/cRVwKvtr32oSeeGSP0CKhU5as353Y1uqtKG7+PuUH8YsPUZOeEMR3sYO6h0U9pWvt7LKbgG71guO7Bd/D/teLYq7+pMCZ5JCvK4f/5jaxUwzunsI6qUEnxx5nR07gLDoIWcZK01ycXRk+V0scepMi4uCusoohw6D7iPnYVFe1BcljWObs3pmn4q4FMdAAoxFWqm0r+RahV1XckOQfCl82mlj+y12YLgXWkLdQyFqC0VUN2FabZ9OYC/25OMoEJ0JIYUgBgplDAwB6wUOEp4fs="
+
+after_success:
+  - npm install -g codeclimate-test-reporter
+  - codeclimate-test-reporter < lcov.info
