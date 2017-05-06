@@ -2,9 +2,9 @@ import { getTerms } from './index'
 
 describe('getTerms', () => {
   let expected = {
-      house: 2,
-      senate: 4,
-      governor: 4
+    house: 2,
+    senate: 4,
+    governor: 4
   }
 
   it('should return default terms', () => {
@@ -17,7 +17,6 @@ describe('getTerms', () => {
   })
 
   describe('special cases', () => {
-   
     it('should return the correct terms for Alabama', () => {
       const result = getTerms('AL')
       expect(result).toEqual({ ...expected, house: 4 })
