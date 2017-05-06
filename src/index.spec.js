@@ -1,14 +1,14 @@
 import { getTerms } from './index'
 
-const checkState = (state, expected) =>
-  expect(getTerms(state)).toEqual(expected)
-
 describe('getTerms', () => {
   const expected = {
     house: 2,
     senate: 4,
     governor: 4
   }
+
+  const checkState = (state, outlier) =>
+    expect(getTerms(state)).toEqual({ ...expected, ...outlier })
 
   it('should return default terms', () => {
     const result = getTerms('CA')
@@ -24,7 +24,7 @@ describe('getTerms', () => {
       const states = ['AZ', 'CT', 'GA', 'ID', 'MA', 'ME', 'NC', 'NY', 'RI', 'SD']
 
       it('should return the correct terms for relevant states', () => {
-        states.map(state => checkState(state, { ...expected, senate: 2 }))
+        states.map(state => checkState(state, { senate: 2 }))
       })
     })
 
@@ -32,7 +32,7 @@ describe('getTerms', () => {
       const states = ['AL', 'LA', 'MD', 'MO', 'MS', 'ND']
 
       it('should return the correct terms for relevant states', () => {
-        states.map(state => checkState(state, { ...expected, house: 4 }))
+        states.map(state => checkState(state, { house: 4 }))
       })
     })
 
@@ -40,7 +40,7 @@ describe('getTerms', () => {
       const states = ['NH', 'VT']
 
       it('should return the correct terms for relevant states', () => {
-        states.map(state => checkState(state, { ...expected, senate: 2, governor: 2 }))
+        states.map(state => checkState(state, { senate: 2, governor: 2 }))
       })
     })
 
